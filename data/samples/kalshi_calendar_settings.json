@@ -1,0 +1,27 @@
+{
+  "source_run_id": "20261124T180009786171Z",
+  "calendar_timezone": "Europe/Amsterdam",
+  "start_date_inclusive": "2026-11-24",
+  "end_date_inclusive": "2026-12-07",
+  "start_utc": "2026-11-23T23:00:00+00:00",
+  "end_utc_exclusive": "2026-12-07T23:00:00+00:00",
+  "series_sport_map": {
+    "KXEPLGAME": "football",
+    "KXEFLCHAMPIONSHIPGAME": "football",
+    "KXBUNDESLIGAGAME": "football",
+    "KXLALIGAGAME": "football",
+    "KXSERIEAGAME": "football",
+    "KXLIGUE1GAME": "football",
+    "KXATPMATCH": "tennis",
+    "KXWTAMATCH": "tennis",
+    "KXATPCHALLENGERMATCH": "tennis",
+    "KXCHALLENGERMATCH": "tennis",
+    "KXWTACHALLENGERMATCH": "tennis",
+    "KXITFMATCH": "tennis",
+    "KXITFWMATCH": "tennis",
+    "KXDAVISCUPMATCH": "tennis",
+    "KXUNITEDCUPMATCH": "tennis"
+  },
+  "schedule_source": "kalshi_milestone",
+  "independently_verified": false
+}

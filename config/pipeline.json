@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "timezone": "Europe/Amsterdam",
+  "window": {
+    "mode": "rolling",
+    "days": 14,
+    "fixed_start_date": "2026-11-22",
+    "fixed_end_date_inclusive": "2026-12-05"
+  },
+  "collection": {
+    "base_url": "https://external-api.kalshi.com/trade-api/v2",
+    "request_timeout_seconds": 60,
+    "request_delay_seconds": 1.5,
+    "max_pages_per_series": 50,
+    "max_retries": 3,
+    "retry_backoff_seconds": 2
+  },
+  "series_sport_map": {
+    "KXEPLGAME": "football",
+    "KXEFLCHAMPIONSHIPGAME": "football",
+    "KXBUNDESLIGAGAME": "football",
+    "KXLALIGAGAME": "football",
+    "KXSERIEAGAME": "football",
+    "KXLIGUE1GAME": "football",
+    "KXATPMATCH": "tennis",
+    "KXWTAMATCH": "tennis",
+    "KXATPCHALLENGERMATCH": "tennis",
+    "KXCHALLENGERMATCH": "tennis",
+    "KXWTACHALLENGERMATCH": "tennis",
+    "KXITFMATCH": "tennis",
+    "KXITFWMATCH": "tennis",
+    "KXDAVISCUPMATCH": "tennis",
+    "KXUNITEDCUPMATCH": "tennis"
+  }
+}

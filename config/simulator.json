@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "timezone": "Europe/Amsterdam",
+  "portfolios": [
+    {
+      "portfolio_id": "baseline_equal_weight",
+      "enabled": true,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "equal_weight",
+      "max_open_positions": 20,
+      "max_stake_per_position": 100.0,
+      "max_total_exposure": 2000.0,
+      "strategies": [
+        "favorite_back",
+        "longshot_back"
+      ],
+      "sport_filter": [],
+      "series_filter": []
+    },
+    {
+      "portfolio_id": "dynamic_edge_weighted",
+      "enabled": true,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "dynamic",
+      "max_open_positions": 20,
+      "max_stake_per_position": 200.0,
+      "max_total_exposure": 4000.0,
+      "strategies": [
+        "favorite_back",
+        "longshot_back"
+      ],
+      "sport_filter": [],
+      "series_filter": []
+    },
+    {
+      "portfolio_id": "football_only_test",
+      "enabled": false,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "equal_weight",
+      "max_open_positions": 20,
+      "max_stake_per_position": 100.0,
+      "max_total_exposure": 2000.0,
+      "strategies": [
+        "favorite_back",
+        "longshot_back"
+      ],
+      "sport_filter": [
+        "football"
+      ],
+      "series_filter": []
+    },
+    {
+      "portfolio_id": "tennis_only_test",
+      "enabled": false,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "equal_weight",
+      "max_open_positions": 20,
+      "max_stake_per_position": 100.0,
+      "max_total_exposure": 2000.0,
+      "strategies": [
+        "favorite_back",
+        "longshot_back"
+      ],
+      "sport_filter": [
+        "tennis"
+      ],
+      "series_filter": []
+    },
+    {
+      "portfolio_id": "tight_spread_test",
+      "enabled": false,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "equal_weight",
+      "max_open_positions": 20,
+      "max_stake_per_position": 100.0,
+      "max_total_exposure": 2000.0,
+      "strategies": [
+        "favorite_back_tight_spread",
+        "longshot_back_tight_spread"
+      ],
+      "sport_filter": [],
+      "series_filter": []
+    },
+    {
+      "portfolio_id": "higher_liquidity_test",
+      "enabled": false,
+      "starting_cash": 10000.0,
+      "currency": "USD",
+      "sizing_mode": "equal_weight",
+      "max_open_positions": 20,
+      "max_stake_per_position": 100.0,
+      "max_total_exposure": 2000.0,
+      "strategies": [
+        "favorite_back_high_liquidity",
+        "longshot_back_high_liquidity"
+      ],
+      "sport_filter": [],
+      "series_filter": []
+    }
+  ],
+  "strategy_definitions": {
+    "favorite_back": {
+      "description": "Back the lower-priced eligible outcome, targeting likely winners.",
+      "selection": "lowest_yes_price",
+      "minimum_entry_price": 0.5,
+      "maximum_entry_price": 0.95,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.1,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 0,
+      "minimum_open_interest_contracts": 0
+    },
+    "longshot_back": {
+      "description": "Back the higher-priced eligible outcome, targeting less likely outcomes.",
+      "selection": "highest_yes_price",
+      "minimum_entry_price": 0.05,
+      "maximum_entry_price": 0.5,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.1,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 0,
+      "minimum_open_interest_contracts": 0
+    },
+    "favorite_back_tight_spread": {
+      "description": "Favorite-back variant that requires a narrower spread.",
+      "selection": "lowest_yes_price",
+      "minimum_entry_price": 0.5,
+      "maximum_entry_price": 0.95,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.05,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 0,
+      "minimum_open_interest_contracts": 0
+    },
+    "longshot_back_tight_spread": {
+      "description": "Longshot-back variant that requires a narrower spread.",
+      "selection": "highest_yes_price",
+      "minimum_entry_price": 0.05,
+      "maximum_entry_price": 0.5,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.05,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 0,
+      "minimum_open_interest_contracts": 0
+    },
+    "favorite_back_high_liquidity": {
+      "description": "Favorite-back variant that requires minimum activity.",
+      "selection": "lowest_yes_price",
+      "minimum_entry_price": 0.5,
+      "maximum_entry_price": 0.95,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.1,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 100,
+      "minimum_open_interest_contracts": 100
+    },
+    "longshot_back_high_liquidity": {
+      "description": "Longshot-back variant that requires minimum activity.",
+      "selection": "highest_yes_price",
+      "minimum_entry_price": 0.05,
+      "maximum_entry_price": 0.5,
+      "minimum_spread": 0.0,
+      "maximum_spread": 0.1,
+      "require_interior_quote": true,
+      "require_schedule_in_window": true,
+      "exclude_started_events": true,
+      "minimum_volume_contracts": 100,
+      "minimum_open_interest_contracts": 100
+    }
+  },
+  "dynamic_sizing": {
+    "base_stake": 100.0,
+    "minimum_stake": 25.0,
+    "maximum_stake": 200.0,
+    "confidence_measure": "price_distance_from_midpoint",
+    "minimum_confidence": 0.0,
+    "maximum_confidence": 1.0
+  },
+  "execution_rules": {
+    "paper_trading_only": true,
+    "allow_real_orders": false,
+    "entry_timing": "snapshot",
+    "fill_assumption": "yes_ask",
+    "exit_assumption": "yes_bid",
+    "fee_rate_per_contract": 0.0,
+    "minimum_price": 0.01,
+    "maximum_price": 0.99,
+    "minimum_contract_size": 1,
+    "round_contract_size": "floor"
+  },
+  "dashboard": {
+    "style": "terminal",
+    "show_portfolio_summary": true,
+    "show_open_positions": true,
+    "show_closed_positions": true,
+    "show_strategy_summary": true,
+    "show_recent_trades": 20
+  },
+  "integration": {
+    "enabled": false,
+    "signal_file": "data/integration/model_signals.csv",
+    "require_model_probability": true,
+    "require_market_match": true,
+    "allow_position_creation": false,
+    "minimum_edge": 0.03,
+    "maximum_signals_per_run": 100,
+    "require_model_version": true,
+    "require_features_version": true
+  }
+}

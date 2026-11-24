@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Spyder / Jupyter
+.spyproject/
+.ipynb_checkpoints/
+
+# Credentials and secrets
+config/football_data_token.txt
+*.env
+*.key
+*.pem
+
+# Raw collected data
+data/raw/
+
+# Generated research data
+data/processed/
+data/integration/
+
+# Allow curated sample data for teammates
+!data/samples/
+!data/samples/**
+
+# Local archives and backups
+archive/
+backups/
+
+# Logs
+logs/
+
+# Inventory files
+project_inventory*.txt
+
+# Operating system
+.DS_Store
+Thumbs.db
